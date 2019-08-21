@@ -1,0 +1,14 @@
+#mysql package use in databases for storing data as long you want
+
+
+
+import pymysql
+db=pymysql.connect("localhost","ayushi","yourpassword","demo")
+caching sha2: succeeded by fast path.
+cursor=db.cursor()
+cursor.execute("DROP TABLE IF EXISTS student") #This drops the table and replaces it 
+query="""CREATE TABLE student(
+fname VARCHAR(20), lname VARCHAR(20),
+age INT, enrolment_no VARCHAR(12))"""
+cursor.execute(query)
+db.close()
